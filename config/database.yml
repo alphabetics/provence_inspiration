@@ -1,13 +1,13 @@
 test:
   adapter: postgresql
-  database: ground_zero_test
+  database: provence_test
   host: localhost
   pool: 5
   timeout: 5000
 
 development:
   adapter: postgresql
-  database: ground_zero_development
+  database: provence_development
   host: localhost
   pool: 5
   timeout: 5000
