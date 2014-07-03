@@ -6,7 +6,16 @@ Provence::Application.routes.draw do
   #Users
   resources :users
   match '/signup', to: 'users#new', via: 'get'
+
+  #Products
+  resources :products
   
+  #Catagories
+  resources :categories
+
+  #Variants
+  resources :variants
+
   #Sessions
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin', to: 'sessions#new', via: 'get'

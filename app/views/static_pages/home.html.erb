@@ -1,13 +1,104 @@
-<!-- hello -->
-
 <div class="home-header">
-	Home decor brought to you straight from the heart of Provence, France!
+	<!-- Hero -->
+	<div class="nav"> <!-- menu Navigation-->
+		<ul class="menu">
+			<li><a href="about.html">ABOUT PROVENCE</a></li>
+			<li><a href="#">TEXTILES</a></li>
+			<li><a href="#">HOME DECORS</a></li>
+			<li><%= link_to category_path('new.html') do %>ADMIN<% end %></li>
+
+		</ul>
+	</div>
+	
+	<div class="menu-border">
+	
+	</div>
+
+
+	<div class="header">
+		Inspired Home Decor 
+	</div>
+
+	<div class="header-text">
+		Brought to you straight from the heart of Provence, France!
+	</div>
+
 </div>
 
-<br>
 
-<span id="shopping-button">
-	Start Shopping
-</span>
+<div class="window-display">
+<!-- Highlighted categories-->
+	<% @categories.each do |category| %>
+		<%= link_to category_path(category) do %>
+			<div class="store-window">
+				<div class="store-item">
+				<%= filepicker_image_tag category.img, w:180, h:180 %>
+				</div>
+			<big><%= category.title %></big>
+			<br>
+			
+		</div>
 
-<%= image_tag "test.png" %>
+
+
+		<% end %>
+	<% end %>
+	
+</div>
+
+<div class="content">
+
+	<div class="news">
+		<h2>Recent News</h2>
+		<hr class="blk-bar">
+		
+		<h3>Back from France!</h3>
+		<p>We're back from our trip from France bringing back all new fabrics. Come check out our store to see what new items are in store...
+		<p>
+		<br>
+		<a href="#">Read More</a>
+		<hr class="d-bar">
+
+		<h3>I can see your underpants!</h3>
+		<p>I see London, I see France. Come to our store to see what else I see...
+		<p>
+		<br>
+		<a href="#">Read More</a>
+		<!-- <hr class="d-bar"> -->
+
+	</div>	
+
+ <div class="contact">
+		<h2>Contact Us</h2>
+		<hr class="blk-bar">
+		Phone: 640-241-4032
+		<br>
+		Email: <a href="mailto:info@provendenceinspiration.com">info@provendenceinspiration.com</a>
+		<br>
+		Twitter: <a href="twitter.com/provendenceinspiration">provendenceinspiration</a>
+		<br>
+		Facebook: <a href="facebook.com/provendenceinspiration">provendenceinspiration</a>
+		<br>
+		Pintrest: <a href="pintrest.com/provendenceinspiration">provendenceinspiration</a>
+
+		<h2>News Letter</h2>
+		<hr class="blk-bar">
+		<input type="text" email="email address" placeholder="email address">
+		<br>
+		<button class="sub">Subscribe</button>
+
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <%= image_tag "test.png" %> -->

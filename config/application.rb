@@ -14,5 +14,7 @@ Bundler.require(:default, Rails.env)
 module Provence
   class Application < Rails::Application
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    	config.filepicker_rails.api_key = "AnVq0cnYkSd5diCaFLCa5z"
+    	config.filepicker_rails.secret_key = "NRWJRY2WBBBHDMRW37YW6PTYJI"
   end
 end

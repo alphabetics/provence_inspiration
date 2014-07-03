@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%= favicon_link_tag 'favicon.ico' %>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= filepicker_js_include_tag %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/ie_html5_shim' %>
   <%= render 'layouts/bootstrap' %>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -18,6 +25,8 @@
 <% end %>
 
 <%= yield %>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

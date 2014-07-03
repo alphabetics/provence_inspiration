@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130153000) do
+ActiveRecord::Schema.define(version: 20140627054956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "img"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "title"
+    t.float    "price"
+    t.text     "description"
+    t.integer  "inventory"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "img"
+    t.integer  "category_id"
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -27,5 +48,16 @@ ActiveRecord::Schema.define(version: 20131130153000) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+
+  create_table "variants", force: true do |t|
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.integer  "product_id"
+    t.string   "img"
+  end
+
+  add_index "variants", ["product_id"], name: "index_variants_on_product_id", using: :btree
 
 end
