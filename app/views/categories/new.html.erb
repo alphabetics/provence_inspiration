@@ -1,0 +1,63 @@
+<!-- new categories -->
+<!-- title -->
+<div class="content-body title">
+
+	<h1 id="text-center">Categories</h1>
+
+<!-- menu Navigation-->
+	<ul class="menu-nonhome">
+		<li><%= link_to 'HOME', root_url %></li>
+		<li><%= link_to category_path('new') do %>CATEGORIES<% end %></li>
+		<li><%= link_to 'PRODUCTS', product_path('new') %></li>
+		<li><%= link_to 'VARIANTS', variant_path('new') %></li>
+	</ul>
+	
+	<div class="menu-nonhome-border"></div>
+
+
+<!-- Form for new category-->
+
+	<div class="form">
+		
+<!-- form Image side -->
+		<%= simple_form_for @category do |f| %>
+
+			<div class="image">
+				<%= image_preview() %>
+
+
+			</div>	
+			
+<!-- form Input side -->
+			<div class="input-fields">
+				<%= f.input :title, placeholder: "Title" %>
+				<%= f.input :description, placeholder: "Description" %>
+				<div class="button_div">
+					<%= f.submit "Add Category", :class => 'button_class' %>
+				</div>
+			</div>
+		
+		<% end %>
+	</div>
+
+	<hr class="blk-bar">
+<!-- list of categories -->
+
+	
+	<h1 id="text-center">Categories</h1>
+	
+	<div class="window-display unmain">
+		<% @categories.each do |category| %>
+			<%= link_to category_path(category) do %>
+				<div class="store-window">
+					<div class="store-item">	
+						<%= filepicker_image_tag category.img, w:180, h:180 %>
+					</div>
+					<div class="item-title"> <%= category.title %> </div>
+					<div class="item-desc"> <%= category.description %> </div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+</div>

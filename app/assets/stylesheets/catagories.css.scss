@@ -1,0 +1,150 @@
+/* Categories */
+
+.content-body {
+	width:900px;
+	margin: 0 auto;
+	font-family: 'Roboto', sans-serif;
+	overflow:auto;
+}
+	
+.menu-nonhome{
+	list-style-type:none;
+	margin-top:5px;
+	font-size:.9em;
+	padding:0;
+	text-align:center;
+}
+
+.menu-nonhome li {
+	display: inline;
+	margin-left:30px;
+	letter-spacing:1px;
+	font-weight:300;
+}
+
+.menu-nonhome a{
+	&:hover{
+		color:#494991;
+		text-decoration:none;
+	}
+}
+
+.menu-nonhome-border{
+	border-top:solid 1px black;
+	width:50%;
+	margin: 5px auto 15px;
+}
+
+.form {
+	width:600px;
+	border:black solid 1px;
+	height:300px;
+	margin: 0 auto;
+}
+
+
+
+.form .image{
+	width:250px;
+	height:250px;
+	float:left;
+	margin:24px;
+	border:solid black 1px;
+}
+
+.form .input-fields{
+	width:250px;
+	height:250px;
+	float:left;
+	margin:24px;
+	border:solid black 1px;
+}
+
+
+.item-title {
+	font-size:.8em;;
+}
+
+.item-desc{
+	font-size:.6em;
+	top:10px;
+}
+
+
+/* simple form modifications */
+
+.simple_form label {
+	width:100%;
+	text-align:center;
+}
+
+.simle_form div.input{
+	width:100%;
+	margin: 0 auto;
+
+}
+
+#category_title{
+	width:200px;
+	margin-left:25px;
+}
+
+#category_description{
+	width:200px;
+	height:100px;
+	margin-left:25px;
+}
+
+/* button changes */
+
+.button_class{
+	position:relative;
+	bottom:0;
+	width:150px;
+}
+
+.button_div{
+	bottom:0;
+	margin-top:20px;
+	margin-right:25px;
+	float:right;
+}
+
+.add-photo-button{
+	bottom:0;
+	top:130px;
+	left:50px;
+	position:relative;
+	display:inline-block;
+
+}
+
+#product_title{
+	width:200px;
+	margin-left:25px;
+}
+
+#product_price{
+	width:200px;
+	margin-left:25px;
+}
+
+.dissapear{
+	display:none;
+}
+
+#variant_title{
+	width:200px;
+	margin-left:25px;
+}
+
+
+#variant_price{
+	width:200px;
+	margin-left:25px;
+}
+
+.associated-form{
+	width:200px;
+	margin-left:25px;
+}

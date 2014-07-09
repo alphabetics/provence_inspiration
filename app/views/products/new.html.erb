@@ -1,0 +1,71 @@
+ <!-- New Product -->
+
+ <!-- title -->
+<div class="content-body title">
+	
+	<h1 id="text-center"> Add new product</h1>
+<!-- menu Navigation-->
+	<ul class="menu-nonhome">
+		<li><%= link_to 'HOME', root_url %></li>
+		<li><%= link_to category_path('new') do %>CATEGORIES<% end %></li>
+		<li><%= link_to 'PRODUCTS', product_path('new') %></li>
+		<li><%= link_to 'VARIANTS', variant_path('new') %></li>
+	</ul>
+	
+	<div class="menu-nonhome-border"></div>
+
+<!-- Form for new products for category-->
+	
+
+<!-- trying to add a drop down for changing category -->	
+	
+
+	<div class="form">
+
+
+		<%= simple_form_for @product do |f| %>
+<!-- form Image side -->
+			<div class="image">
+				<p>This is where the photo goes </p>
+				<br>
+				<p>extra credit</p>
+				<div class="add-photo-button">
+					<%= f.filepicker_field :img, button_text: "Add Product Photo" %>
+				</div>
+			</div>
+
+<!-- form Input side -->
+			<div class="input-fields">
+				<%= f.association :category, input_html: {class: "associated-form"} %>	
+				<%= f.input :title, placeholder: "Title", :required => false %>
+				<%= f.input :price, placeholder: "Price", label: "Price ($)" %>
+				<div class="button_div">
+					<%= f.submit "Add Product", :class => 'button_class' %>
+				</div>
+
+			</div>
+		
+		<% end %>
+	</div>
+
+<!-- list of products -->
+	<h1 id="text-center">Complete Product list</h1>
+	
+	<div class="window-display unmain"> 
+	 	<% @products.each do |product| %>
+	 		<%= link_to product_path(product) do %>
+	 		<div class="store-window">
+	 		
+	 			<div class="store-item">
+					<%= filepicker_image_tag product.img, w:180, h:180 %>
+				</div>
+
+				<div class="item-title"><%= product.title %></div>
+				<div class="item-desc"><%= product.price %></div>
+			
+			</div>
+			<% end %>
+		<% end %>
+
+	</div>
+</div>
